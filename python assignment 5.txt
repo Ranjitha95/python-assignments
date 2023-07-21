@@ -1,0 +1,72 @@
+1. Write a Python Program to Find LCM?
+
+from math import gcd
+from functools import reduce
+
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+def lcm_of_list(numbers):
+    return reduce(lcm, numbers)
+ 
+2. Write a Python Program to Find HCF?
+def gcd(a, b):
+    """Calculate the Greatest Common Divisor (GCD) using Euclid's algorithm."""
+    while b:
+        a, b = b, a % b
+    return a
+
+def hcf_of_list(numbers):
+    """Calculate the HCF of a list of numbers."""
+    result = numbers[0]
+    for number in numbers[1:]:
+        result = gcd(result, number)
+    return result
+
+
+3. Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal?
+
+def decimal_to_binary(decimal_num):
+    """Convert a decimal number to binary."""
+    return bin(decimal_num).replace("0b", "")
+
+def decimal_to_octal(decimal_num):
+    """Convert a decimal number to octal."""
+    return oct(decimal_num).replace("0o", "")
+
+def decimal_to_hexadecimal(decimal_num):
+    """Convert a decimal number to hexadecimal."""
+    return hex(decimal_num).replace("0x", "").upper()
+
+4. Write a Python Program To Find ASCII value of a character?
+def find_ascii_value(char):
+    """Find the ASCII value of a character."""
+    return ord(char)
+if __name__ == "__main__":
+    try:
+        character = input("Enter a character: ")
+        if len(character) != 1:
+            raise ValueError("Please enter a single character.")
+        
+        ascii_value = find_ascii_value(character)
+        print(f"ASCII value of '{character}' is {ascii_value}.")
+        
+    except ValueError as e:
+        print("Error:", e)
+
+5. Write a Python Program to Make a Simple Calculator with 4 basic mathematical operations?
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Cannot divide by zero!"
+
