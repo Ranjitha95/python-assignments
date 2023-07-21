@@ -1,0 +1,42 @@
+1. Write a Python Program to Display Fibonacci Sequence Using Recursion?
+def fibonacci_recursive(n):
+    """Display the Fibonacci sequence up to the nth term using recursion."""
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    else:
+        fib_sequence = fibonacci_recursive(n - 1)
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+        return fib_sequence
+2. Write a Python Program to Find Factorial of Number Using Recursion?
+def factorial_recursive(n):
+    """Calculate the factorial of a number using recursion."""
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial_recursive(n - 1)
+3. Write a Python Program to calculate your Body Mass Index?
+def calculate_bmi(weight, height):
+    """Calculate Body Mass Index (BMI) using weight in kilograms and height in meters."""
+    if weight <= 0 or height <= 0:
+        raise ValueError("Weight and height should be positive values.")
+    return weight / (height ** 2)
+4. Write a Python Program to calculate the natural logarithm of any number?
+import math
+
+def calculate_natural_log(x):
+    """Calculate the natural logarithm of a number."""
+    if x <= 0:
+        raise ValueError("The number must be positive.")
+    return math.log(x)
+5. Write a Python Program for cube sum of first n natural numbers?
+def cube_sum_of_natural_numbers(n):
+    """Calculate the cube sum of the first n natural numbers."""
+    if n <= 0:
+        raise ValueError("n must be a positive integer.")
+    
+    cube_sum = sum(i**3 for i in range(1, n+1))
+    return cube_sum
