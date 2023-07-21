@@ -1,0 +1,62 @@
+1. Write a Python Program to Add Two Matrices?
+def add_matrices(matrix1, matrix2):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        raise ValueError("Matrices must have the same dimensions to be added.")
+
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix1[0])):
+            row.append(matrix1[i][j] + matrix2[i][j])
+        result.append(row)
+
+    return result
+
+2. Write a Python Program to Multiply Two Matrices?
+def multiply_matrices(matrix1, matrix2):
+    if len(matrix1[0]) != len(matrix2):
+        raise ValueError("Number of columns in the first matrix must be equal to the number of rows in the second matrix.")
+
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix2[0])):
+            element = 0
+            for k in range(len(matrix1[0])):
+                element += matrix1[i][k] * matrix2[k][j]
+            row.append(element)
+        result.append(row)
+
+    return result
+3. Write a Python Program to Transpose a Matrix?
+def transpose_matrix(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    # Create an empty matrix to store the transposed elements
+    transposed_matrix = [[0 for _ in range(rows)] for _ in range(cols)]
+
+    # Transpose the matrix
+    for i in range(rows):
+        for j in range(cols):
+            transposed_matrix[j][i] = matrix[i][j]
+
+    return transposed_matrix
+
+4. Write a Python Program to Sort Words in Alphabetic Order?
+def sort_words_alphabetically(sentence):
+    words = sentence.split()
+    sorted_words = sorted(words, key=str.lower)
+    return ' '.join(sorted_words)
+
+5. Write a Python Program to Remove Punctuation From a String?
+import string
+
+def remove_punctuation(input_string):
+    # Define a set of punctuation characters
+    punctuation_set = set(string.punctuation)
+
+    # Create a new string with punctuation removed
+    cleaned_string = ''.join(char for char in input_string if char not in punctuation_set)
+
+    return cleaned_string
